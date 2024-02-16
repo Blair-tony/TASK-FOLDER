@@ -7,6 +7,5 @@ for item in li1:
     if item not in l2:
         l2.append(item)
         
-li1 = l2
 
-print(li1)
+print(l2)
