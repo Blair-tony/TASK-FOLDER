@@ -1,0 +1,29 @@
+# Write a Python program that prompts the user to enter their age. Define a custom exception called 
+# InvalidAgeError that is raised when the entered age is less than 0 or 
+# greater than 150. Handle the InvalidAgeError exception and display an appropriate error message.
+
+
+
+
+class InvalidAgeError(Exception):
+    """Custom exception for invalid age"""
+    pass
+
+def get_user_age():
+    while True:
+        try:
+            age = int(input("Please enter your age: "))
+            if age < 0 or age > 150:
+                raise InvalidAgeError("Age must be between 0 and 150.")
+            return age
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+        except InvalidAgeError as e:
+            print(e)
+
+if __name__ == "__main__":
+    try:
+        age = get_user_age()
+        print("Your age is:", age)
+    except KeyboardInterrupt:
+        print("\nProgram terminated by user.")
