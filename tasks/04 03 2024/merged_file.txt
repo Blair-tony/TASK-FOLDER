@@ -1,0 +1,8 @@
+ddddddddd
+
+ddddddddd
+lkdadnkdn;knsdkndfjogjgjgjgjijlej;owejfweoojoihknfhihiojldfjkjiuhhnfmkm
+
+Hello, this is a sample text file.
+We will count the number of lines, words, and characters.
+This is the third line in our sample text file.
