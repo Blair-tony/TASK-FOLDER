@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK LIST</title>
+</head>
+<body>
+    <h1>BOOK LIST</h1>
+    {% if data %}
+        <ul>
+            {%for Book in data%}
+                <li>{{Book.title}} by {{Book.author}}</li>
+            {%endfor%}
+        </ul>
+    {% else %}
+        <p>no books available</p>
+    {% endif %}
+</body>
+</html>
