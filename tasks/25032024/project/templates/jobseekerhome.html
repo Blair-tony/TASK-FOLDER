@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Home</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Job Seeker!</h1>
+        <button class="btn" onclick="location.href='{% url 'update_profile' %}';">View Profile</button>
+        <button class="btn" onclick="location.href='{% url 'upload_resume' %}';">Upload Resume</button>
+        <button class="btn" onclick="location.href='{% url 'job_listings' %}';">Search Job Listings</button>
+        <button class="btn" onclick="location.href='{% url 'job_openings_view' %}';">Apply to Jobs</button>
+        <button class="btn" onclick="location.href='{% url 'job_application_status' %}';">Review Application Status</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .job-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .job-list li {
+            margin-bottom: 10px;
+        }
+
+        .job-list li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your Company Dashboard</h1>
+    <h2>Your Job Listings:</h2>
+    <ul class="job-list">
+        {% for job_listing in job_listings %}
+            <li><a href="{% url 'job_listing_detail' job_listing.id %}">{{ job_listing.job_title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_job_listing' %}" class="btn btn-primary">Create New Job Listing</a>
+    <a href="{% url 'job_listing_detail' %}" class="btn btn-primary">view</a>
+    <a href="{% url 'create_job_listing' %}" class="btn btn-primary">manage job application</a>
+    <a href="{% url 'CompanyProfile' %}" class="btn btn-primary">create company profile</a>
+
+
+</body>
+</html>

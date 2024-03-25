@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Resumes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .resume-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resume-list-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .resume-info {
+            margin-bottom: 10px;
+        }
+        .resume-actions {
+            text-align: right;
+        }
+        .resume-actions a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>View Resumes</h1>
+        <ul class="resume-list">
+            {% for resume in resumes %}
+            <li class="resume-list-item">
+                <div class="resume-info">
+                    <p><strong>Uploaded At:</strong> {{ resume.uploaded_at }}</p>
+                    <p><strong>File:</strong> <a href="{{ resume.resume_file.url }}" target="_blank">{{ resume.resume_file.name }}</a></p>
+                </div>
+                <div class="resume-actions">
+                    <a href="{{ resume.resume_file.url }}" target="_blank">View</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

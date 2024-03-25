@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Job Posting Form{% endblock %}
+
+{% block content %}
+    <div class="job-posting-form-container" style="max-width: 800px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+        <h2 style="text-align: center;">Job Posting Form</h2>
+        <form method="post" style="margin-top: 20px;">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="job_title">Job Title:</label>
+                <input type="text" id="job_title" name="job_title" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="job_description">Job Description:</label>
+                <textarea id="job_description" name="job_description" rows="5" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="required_qualifications">Required Qualifications:</label>
+                <textarea id="required_qualifications" name="required_qualifications" rows="3" class="form-control" required></textarea>
+            </div>
+            <!-- Add more form fields here -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}
