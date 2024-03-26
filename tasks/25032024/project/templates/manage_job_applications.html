@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Job Applications</title>
+</head>
+<body>
+    <h1>Manage Job Applications</h1>
+    <ul>
+        {% for job_application in job_applications %}
+            <li>{{ job_application.user.full_name }} - Applied for: {{ job_application.job.job_title }}</li>
+            <button><a href="{% url 'view_job_application' job_application.id %}">View</a></button>
+        {% endfor %}
+    </ul>
+</body>
+</html>

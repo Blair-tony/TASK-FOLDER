@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Disputes Management{% endblock %}
+
+{% block content %}
+    <div class="disputes-management-container" style="max-width: 800px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+        <h2 style="text-align: center;">Disputes Management</h2>
+        <table class="table" style="width: 100%; margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>Reported By</th>
+                    <th>Issue</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dispute in disputes %}
+                <tr>
+                    <td>{{ dispute.reported_by }}</td>
+                    <td>{{ dispute.issue }}</td>
+                    <td>{{ dispute.status }}</td>
+                    <td>
+                        <a href="{% url 'resolve_dispute' dispute.id %}">Resolve</a> |
+                        <a href="{% url 'view_dispute_details' dispute.id %}">View Details</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

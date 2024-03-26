@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Job Application</title>
+</head>
+<body>
+    <h1>Job Application Details</h1>
+    <p>Candidate Name: {{ user_profile.full_name }}</p>
+    <p>Email: {{ user_profile.email }}</p>
+    <p>Job Title: {{ job_application.job.job_title }}</p>
+    <p>Cover Letter: {{ job_application.cover_letter }}</p>
+</body>
+</html>

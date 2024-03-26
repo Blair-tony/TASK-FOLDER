@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Job Listings{% endblock %}
+
+{% block content %}
+    <div class="job-listings-container" style="max-width: 800px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+        <h2 style="text-align: center;">Job Listings</h2>
+        <form method="get" style="margin-bottom: 20px;">
+            <input type="text" name="search" placeholder="Search..." style="width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            <button type="submit" style="padding: 10px; border: none; border-radius: 5px; background-color: #007bff; color: #fff; cursor: pointer;">Search</button>
+        </form>
+        <div class="job-listings">
+            {% for job in job_listings %}
+                <div class="job">
+                    <h3>{{ job.title }}</h3>
+                    <p>{{ job.description }}</p>
+                    <p><strong>Location:</strong> {{ job.location }}</p>
+                    <p><strong>Employment Type:</strong> {{ job.employment_type }}</p>
+                    <p><strong>Salary Range:</strong> {{ job.salary_range }}</p>
+                    <!-- Add more job details here -->
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
